@@ -6,6 +6,12 @@
 
 ```shell
 composer require jyoz1130/dcat-sku-plus
+
+```
+
+#### 发布资源
+```shell
+php artisan vendor:publish --tag=public
 ```
 
 #### 应用商店安装
