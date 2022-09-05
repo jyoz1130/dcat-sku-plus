@@ -449,5 +449,5 @@
         return html;
     };
 
-    window.JadeKunSKU = SKU;
+    window.AttrSKU = SKU;
 })();

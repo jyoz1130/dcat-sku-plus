@@ -8,7 +8,7 @@ class Setting extends Form
 {
     public function title()
     {
-        return 'SKU扩展增强版配置';
+        return 'SKU扩展配置';
     }
 
     public function form()

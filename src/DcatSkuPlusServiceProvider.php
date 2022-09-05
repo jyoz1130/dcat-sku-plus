@@ -30,6 +30,11 @@ class DcatSkuPlusServiceProvider extends ServiceProvider
             $this->loadViewsFrom($views, 'dcat-sku-plus');
         }
 
+        //publish assets
+        $this->publishes([
+            __DIR__.'/../resources/assets' => $this->getPublishsPath(),
+        ], 'public');
+
         Admin::booting(function () {
             Form::extend('sku', SkuField::class);
         });
