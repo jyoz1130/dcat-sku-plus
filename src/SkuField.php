@@ -14,13 +14,13 @@ class SkuField extends Field
     {
         Admin::js('@extension/jyoz1130/dcat-sku-plus/js/index.js');
         Admin::css('@extension/jyoz1130/dcat-sku-plus/css/index.css');
-        
+
         $uploadUrl = DcatSkuPlusServiceProvider::setting('sku_plus_img_upload_url') ?: '/admin/sku-image-upload';
         $deleteUrl = DcatSkuPlusServiceProvider::setting('sku_plus_img_remove_url') ?: '/admin/sku-image-remove';
         $skuAttributes = SkuAttribute::orderBy('sort', 'desc')->get();
 
         $this->script = <<< EOF
-        window.DemoSku = new JadeKunSKU('{$this->getElementClassSelector()}');
+        window.DemoSku = new AttrSKU('{$this->getElementClassSelector()}');
 EOF;
         $this->addVariables(compact('skuAttributes', 'uploadUrl', 'deleteUrl'));
 

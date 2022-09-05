@@ -1,4 +1,4 @@
-定制使用版
+fork for 个人定制使用
 
 ## 安装
 
@@ -13,8 +13,6 @@ composer require jyoz1130/dcat-sku-plus
 ```shell
 php artisan vendor:publish --tag=public
 ```
-
-#### 应用商店安装
 
 ## 使用
 
