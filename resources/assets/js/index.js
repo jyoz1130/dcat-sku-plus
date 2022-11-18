@@ -106,6 +106,10 @@
             let attr_keys_len = attr_keys.length;
 
             attr_keys.forEach(function (attr_key, index) {
+
+                if (index > 0) {
+                    tbody.append(_this.getHtml());
+                }
                 // 规格名
                 let tr = tbody.find('tr').eq(index);
                 let scopeAttrType = '';
@@ -430,19 +434,21 @@
     SKU.prototype.getHtml = function (innerHtml = '') {
         let _this = this;
         let skuAttributesArray = this.skuAttributes;
-        let html = '<tr><td><select class="form-control  attribute_selector"';
-        if (innerHtml.length > 0 && _this.currentSkuId == '') {
-            html += ' selected="selected"';
-        }
-        html += '><option value="input">手动输入</option>';
-        skuAttributesArray.forEach(function (v, i) {
-            html += ' <option value="' + v.attr_type + '" data-idx="' + i + '"';
-            if (innerHtml.length > 0 && v.id == _this.currentSkuId) {
-                html += ' selected="selected"';
-            }
-            html += '>' + v.attr_name + '</option>'
-        });
-        html += '</select><input type="text" class="form-control input_attr_name"></td><td><div class="sku_attr_val_wrap">' +
+        let html = '<tr><td>';
+        // html+='<select class="form-control  attribute_selector"';
+        // if (innerHtml.length > 0 && _this.currentSkuId == '') {
+        //     html += ' selected="selected"';
+        // }
+        // html += '><option value="input">手动输入</option>';
+        // skuAttributesArray.forEach(function (v, i) {
+        //     html += ' <option value="' + v.attr_type + '" data-idx="' + i + '"';
+        //     if (innerHtml.length > 0 && v.id == _this.currentSkuId) {
+        //         html += ' selected="selected"';
+        //     }
+        //     html += '>' + v.attr_name + '</option>'
+        // });
+        // html += '</select>';
+        html += '<input type="text" class="form-control input_attr_name"></td><td><div class="sku_attr_val_wrap">' +
             (innerHtml.length > 0 ? innerHtml : this.getAttributeHtml('input', this.skuAttr)) +
             '</div></td><td><span class="btn btn-default Js_remove_attr_name">移除</span></td></tr>';
 

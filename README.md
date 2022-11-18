@@ -11,7 +11,7 @@ composer require jyoz1130/dcat-sku-plus
 
 #### 发布资源
 ```shell
-php artisan vendor:publish --tag=public
+ php artisan vendor:publish --tag=public --force
 ```
 
 ## 使用
